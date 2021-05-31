@@ -12,7 +12,11 @@ from rest_framework.views import APIView
 
 from ecommerce.extensions.analytics.utils import track_segment_event
 from ecommerce.extensions.basket.constants import EMAIL_OPT_IN_ATTRIBUTE
+<<<<<<< HEAD
 from ecommerce.extensions.basket.exceptions import BadRequestException
+=======
+from ecommerce.extensions.basket.exceptions import BadRequestException, RedirectException
+>>>>>>> 7cfdf1e9... feat: Add basket api with JSON responses
 from ecommerce.extensions.basket.utils import prepare_basket
 from ecommerce.extensions.basket.views import BasketLogicMixin
 from ecommerce.extensions.order.exceptions import AlreadyPlacedOrderException
@@ -25,7 +29,10 @@ Product = get_model('catalogue', 'Product')
 Voucher = get_model('voucher', 'Voucher')
 
 
+<<<<<<< HEAD
 # Part of this code is copied from ecommerce/extensions/basket/views::BasketAddItemsView
+=======
+>>>>>>> 7cfdf1e9... feat: Add basket api with JSON responses
 class MobileBasketAddItemsView(BasketLogicMixin, APIView):
     """
     View that adds multiple products to a mobile user's basket.
