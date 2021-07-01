@@ -349,6 +349,8 @@ idna==2.7
     #   -r test.txt
     #   cybersource-rest-client-python
     #   requests
+
+inapppy==2.5.2            # via inapppy
 imagesize==1.2.0
     # via
     #   -r docs.txt
