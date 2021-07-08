@@ -6,8 +6,8 @@ import time
 from django.http import JsonResponse
 from django.utils.html import escape
 from django.utils.translation import ugettext as _
-from edx_rest_framework_extensions.permissions import LoginRedirectIfUnauthenticated
 from oscar.apps.basket.views import *  # pylint: disable=wildcard-import, unused-wildcard-import
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from ecommerce.extensions.analytics.utils import track_segment_event
 from ecommerce.extensions.basket.constants import EMAIL_OPT_IN_ATTRIBUTE
@@ -29,7 +29,7 @@ class MobileBasketAddItemsView(BasketLogicMixin, APIView):
     """
     View that adds multiple products to a mobile user's basket.
     """
-    permission_classes = (LoginRedirectIfUnauthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         # Send time when this view is called - https://openedx.atlassian.net/browse/REV-984
