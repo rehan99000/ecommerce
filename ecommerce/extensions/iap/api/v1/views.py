@@ -9,6 +9,9 @@ from django.utils.translation import ugettext as _
 from oscar.apps.basket.views import *  # pylint: disable=wildcard-import, unused-wildcard-import
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from rest_framework.authentication import SessionAuthentication
+
+from ecommerce.extensions.api.authentication import BearerAuthentication
 from ecommerce.extensions.analytics.utils import track_segment_event
 from ecommerce.extensions.basket.constants import EMAIL_OPT_IN_ATTRIBUTE
 from ecommerce.extensions.basket.exceptions import BadRequestException
@@ -29,6 +32,7 @@ class MobileBasketAddItemsView(BasketLogicMixin, APIView):
     """
     View that adds multiple products to a mobile user's basket.
     """
+    authentication_classes = (BearerAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
