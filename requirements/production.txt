@@ -79,6 +79,7 @@ funcsigs==1.0.2           # via cybersource-rest-client-python
 future==0.18.2            # via django-ses, pyjwkest
 gunicorn==19.7.1          # via -r requirements/production.in
 idna==2.7                 # via -c requirements/pins.txt, cybersource-rest-client-python, requests
+inapppy==2.5.2            # via inapppy
 ipaddress==1.0.23         # via cybersource-rest-client-python
 isodate==0.6.0            # via zeep
 itypes==1.2.0             # via coreapi
